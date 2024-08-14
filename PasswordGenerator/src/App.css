@@ -1,0 +1,190 @@
+/* Root Variables for Theming */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #0056b3;
+  --danger-color: #dc3545;
+  --background-color: #fff;
+  --text-color: #333;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+}
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+.card {
+  background: var(--background-color);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px var(--shadow-color);
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+  text-align: left;
+  font-weight: bold;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+input[type="number"]:focus {
+  border-color: var(--primary-color);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-right: 10px;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--primary-color);
+}
+
+input[type="checkbox"]:checked::after {
+  content: '✓';
+  display: block;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+button {
+  padding: 12px 25px;
+  margin-top: 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+p {
+  margin: 15px 0;
+  font-size: 1rem;
+}
+
+code {
+  font-weight: bold;
+  color: #d63384;
+}
+
+/* Strength Meter Styles */
+.strength-meter {
+  height: 10px;
+  width: 100%;
+  background-color: #e0e0e0;
+  margin-top: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.strength-meter-bar {
+  height: 100%;
+  transition: width 0.3s;
+}
+
+.strength-meter-bar.very-weak {
+  background-color: var(--danger-color);
+}
+
+.strength-meter-bar.weak {
+  background-color: orange;
+}
+
+.strength-meter-bar.medium {
+  background-color: yellow;
+}
+
+.strength-meter-bar.strong {
+  background-color: green;
+}
+
+/* Additional styles for the password visibility toggle */
+.password-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eye-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 20px;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.eye-icon:hover {
+  color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+  .card {
+    padding: 15px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --primary-color: #bb86fc;
+    --secondary-color: #3700b3;
+    --danger-color: #cf6679;
+    --shadow-color: rgba(255, 255, 255, 0.1);
+  }
+}
