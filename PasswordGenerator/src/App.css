@@ -7,12 +7,18 @@
   --text-color: #333;
   --shadow-color: rgba(0, 0, 0, 0.1);
   --border-radius: 8px;
+  --border-color: #ccc;
+  --button-padding: 12px 25px;
+  --font-size: 16px;
+  --small-font-size: 14px;
+  --padding: 20px;
 }
 
 /* General Styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: var(--background-color);
+  color: var(--text-color);
   margin: 0;
   padding: 0;
   display: flex;
@@ -20,26 +26,28 @@ body {
   align-items: center;
   min-height: 100vh;
   text-align: center;
-  background-color: var(--background-color);
-  color: var(--text-color);
 }
 
-h1 {
-  font-size: 2rem;
-  color: var(--text-color);
-  margin-bottom: 20px;
+/* Container Styles */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding);
 }
 
+/* Card Styles */
 .card {
   background: var(--background-color);
-  padding: 20px;
+  padding: var(--padding);
   border-radius: var(--border-radius);
   box-shadow: 0 4px 8px var(--shadow-color);
   width: 100%;
-  max-width: 350px;
+  max-width: 600px;
   text-align: center;
 }
 
+/* Label Styles */
 label {
   display: block;
   margin: 10px 0;
@@ -47,11 +55,12 @@ label {
   font-weight: bold;
 }
 
+/* Input Styles */
 input[type="number"] {
   width: 100%;
   padding: 10px;
   border-radius: var(--border-radius);
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   margin-top: 5px;
   outline: none;
   transition: border 0.3s ease;
@@ -86,15 +95,16 @@ input[type="checkbox"]:checked::after {
   line-height: 1.2;
 }
 
+/* Button Styles */
 button {
-  padding: 12px 25px;
+  padding: var(--button-padding);
   margin-top: 20px;
   border: none;
   border-radius: var(--border-radius);
   background-color: var(--primary-color);
   color: white;
   cursor: pointer;
-  font-size: 16px;
+  font-size: var(--font-size);
   transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
@@ -103,6 +113,7 @@ button:hover {
   transform: translateY(-2px);
 }
 
+/* Text and Code Styles */
 p {
   margin: 15px 0;
   font-size: 1rem;
@@ -118,7 +129,7 @@ code {
   height: 10px;
   width: 100%;
   background-color: #e0e0e0;
-  margin-top: 5px;
+  margin-top: 10px;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -144,19 +155,24 @@ code {
   background-color: green;
 }
 
-/* Additional styles for the password visibility toggle */
+/* Password Container Styles */
 .password-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  margin: 20px 0;
+}
+
+.password-item {
+  margin: 10px 0;
 }
 
 .eye-icon {
-  background: none;
   border: none;
+  background: none;
   cursor: pointer;
-  margin-left: 10px;
   font-size: 20px;
+  margin-left: 10px;
   color: var(--text-color);
   transition: color 0.3s ease;
 }
@@ -166,14 +182,14 @@ code {
 }
 
 /* Responsive Design */
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   .card {
     padding: 15px;
   }
 
   button {
     padding: 10px 20px;
-    font-size: 14px;
+    font-size: var(--small-font-size);
   }
 }
 
@@ -186,5 +202,6 @@ code {
     --secondary-color: #3700b3;
     --danger-color: #cf6679;
     --shadow-color: rgba(255, 255, 255, 0.1);
+    --border-color: #333;
   }
 }
